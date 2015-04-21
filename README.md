@@ -1,3 +1,3 @@
-# DukeScriptSamples
+# DukeScript Samples
 
 Samples for DukeScript users
