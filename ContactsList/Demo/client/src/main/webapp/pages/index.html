@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link href="main.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <h3>Contacts</h3>
+        <input data-bind="value: contact, valueUpdate: 'afterkeydown'">
+        <button data-bind="click: $root.updateContacts, enable: okenabled, text: 'OK' "></button>
+        <button data-bind="click: $root.resetContacts, text: 'Reset' "></button>
+        <ol id="words" data-bind="foreach: words">
+            <li data-bind="
+                event: { dblclick: $root.deleteContact }, 
+                text: $data, 
+                click: $root.editContact">
+            </li>
+        </ol>
+        <hr>
+        <span style="color:blue" data-bind= "text: stateMessage" ></span>
+        <!-- boot bck2brwsr -->
+        <script type="text/javascript" src="bck2brwsr.js"></script>
+        <script>
+            var vm = bck2brwsr('Demo.js');
+            var c = vm.loadClass('org.foo.Demo.BrowserMain');
+            c.invoke('main');
+        </script>
+    </body>
+</html>

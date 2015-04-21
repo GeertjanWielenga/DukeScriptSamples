@@ -1,0 +1,9 @@
+h1{color: red}
+
+li.file a {
+    background: red 0 -1px no-repeat;
+    color: red;
+    padding-left: 21px;
+    text-decoration: none;
+    display: block;
+}
