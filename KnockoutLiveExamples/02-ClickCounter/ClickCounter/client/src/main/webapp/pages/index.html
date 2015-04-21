@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+        <h1>Click Counter</h1>
+        <!--example code starts here-->
+        <div>You've clicked <span data-bind='text: numberOfClicks'>&nbsp;</span> times</div>
+        <button data-bind='click: registerClick, disable: hasClickedTooManyTimes'>Click me</button>
+        <div data-bind='visible: hasClickedTooManyTimes'>
+            That's too many clicks! Please stop before you wear out your fingers.
+            <button data-bind='click: resetClicks'>Reset clicks</button>
+        </div>
+        <!--example code ends here-->
+        <!-- boot bck2brwsr -->
+        <script type="text/javascript" src="bck2brwsr.js"></script>
+        <script>
+            var vm = bck2brwsr('ClickCounter.js');
+            var c = vm.loadClass('org.ds.ClickCounter.BrowserMain');
+            c.invoke('main');
+        </script>
+    </body>
+</html>
