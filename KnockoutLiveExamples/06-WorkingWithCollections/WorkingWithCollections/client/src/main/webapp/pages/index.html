@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+        <h1>People</h1>
+        <!-- start of application example -->
+        <ul data-bind="foreach: people">
+            <li>
+                <div>
+                    <span data-bind="text: name"> </span> has <span data-bind='text: children().length'>&nbsp;</span> children:
+                    <a href='#' data-bind='click: addChild '>Add child</a>
+                    <span class='renderTime' data-bind='visible: $root.showRenderTimes'>
+                        (person rendered at <span data-bind='text: new Date().getSeconds()' > </span>)
+                    </span>
+                </div>
+                <ul data-bind="foreach: children">
+                    <li>
+                        <span data-bind="text: $data"> </span>
+                        <span class='renderTime' data-bind='visible: $root.showRenderTimes'>
+                            (child rendered at <span data-bind='text: new Date().getSeconds()' > </span>)
+                        </span>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <label><input data-bind='checked: showRenderTimes' type='checkbox' /> Show render times</label> 
+        <!-- end of application example -->
+        <!-- boot bck2brwsr -->
+        <script type="text/javascript" src="bck2brwsr.js"></script>
+        <script>
+            var vm = bck2brwsr('WorkingWithCollections.js');
+            var c = vm.loadClass('org.ds.WorkingWithCollections.BrowserMain');
+            c.invoke('main');
+        </script>
+    </body>
+</html>
