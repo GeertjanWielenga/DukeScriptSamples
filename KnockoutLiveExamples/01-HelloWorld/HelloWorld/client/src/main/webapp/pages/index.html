@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+        <h1>Hello World</h1>
+        <p>First name: <input data-bind="value: firstName" /></p>
+        <p>Last name: <input data-bind="value: lastName" /></p>
+        <h2>Hello, <span data-bind="text: fullName"> </span>!</h2>
+        <!-- boot bck2brwsr -->
+        <script type="text/javascript" src="bck2brwsr.js"></script>
+        <script>
+            var vm = bck2brwsr('HelloWorld.js');
+            var c = vm.loadClass('og.ds.HelloWorld.BrowserMain');
+            c.invoke('main');
+        </script>
+    </body>
+</html>
