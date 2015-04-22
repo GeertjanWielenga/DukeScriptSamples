@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+        <h1>Contacts</h1>
+        <!-- start of app sample -->
+        <div id='contactsList'>
+            <table class='contactsEditor'>
+                <tr>
+                    <th>First name</th>
+                    <th>Last name</th>
+                    <th>Phone numbers</th>
+                </tr>
+                <tbody data-bind="foreach: contacts">
+                    <tr>
+                        <td>
+                            <input data-bind='value: firstName' />
+                            <div><a href='#' data-bind='click: $root.removeContact'>Delete</a></div>
+                        </td>
+                        <td><input data-bind='value: lastName' /></td>
+                        <td>
+                            <table>
+                                <tbody data-bind="foreach: phones">
+                                    <tr>
+                                        <td><input data-bind='value: type' /></td>
+                                        <td><input data-bind='value: number' /></td>
+                                        <td><a href='#' data-bind='click: $root.removePhone'>Delete</a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <a href='#' data-bind='click: $root.addPhone'>Add number</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p>
+            <button data-bind='click: addContact'>Add a contact</button>
+            <button data-bind='click: save, enable: contacts().length > 0'>Save to JSON</button>
+        </p>
+        <textarea data-bind='value: lastSavedJson' rows='5' cols='60' disabled='disabled'> </textarea>
+        Source code: View model
+        <!-- end of app sample -->
+        <!-- boot bck2brwsr -->
+        <script type="text/javascript" src="bck2brwsr.js"></script>
+        <script>
+            var vm = bck2brwsr('ContactsEditor.js');
+            var c = vm.loadClass('org.ds.ContactsEditor.BrowserMain');
+            c.invoke('main');
+        </script>
+    </body>
+</html>
