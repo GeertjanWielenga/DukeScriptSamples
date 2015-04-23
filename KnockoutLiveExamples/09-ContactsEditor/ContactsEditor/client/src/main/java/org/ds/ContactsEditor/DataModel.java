@@ -19,9 +19,7 @@ final class DataModel {
     @Function static void addPhone(ContactData data) {
         data.getPhones().add(new PhoneData("",""));
     }
-    @Function static void removePhone(Data model, ContactData data) {
-        // ???
-    }
+
     @Function static void save(Data model) {
         // ???
     }
