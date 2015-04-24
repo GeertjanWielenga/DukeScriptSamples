@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1429851953402
+Build-Jdk: 1.8.0_31
+Built-By: antonepple
+Bundle-ManifestVersion: 2
+Bundle-Name: animatedtransitions JavaScript Libraries
+Bundle-SymbolicName: org.ds.animatedtransitions.js
+Bundle-Version: 1.0.0.SNAPSHOT
+Created-By: Apache Maven Bundle Plugin
+Export-Package: org.ds.animatedtransitions.js;version="1.0.0.SNAPSHOT"
+Import-Package: org.netbeans.html.boot.spi;version="[1.1,2)"
+Tool: Bnd-2.1.0.20130426-122213
