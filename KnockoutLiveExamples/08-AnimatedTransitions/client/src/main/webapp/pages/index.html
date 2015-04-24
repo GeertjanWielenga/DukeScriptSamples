@@ -5,25 +5,22 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
         <style type="text/css">
-body { font-family: arial; font-size: 14px; }
-.liveExample { padding: 1em; background-color: #EEEEDD; border: 1px solid #CCC; max-width: 655px; }
-.liveExample input { font-family: Arial; }
-.liveExample b { font-weight: bold; }
-.liveExample p { margin-top: 0.9em; margin-bottom: 0.9em; }
-.liveExample select[multiple] { width: 100%; height: 8em; }
-.liveExample h2 { margin-top: 0.4em; }
+            body { font-family: arial; font-size: 14px; }
+            .liveExample { padding: 1em; background-color: #EEEEDD; border: 1px solid #CCC; max-width: 655px; }
+            .liveExample input { font-family: Arial; }
+            .liveExample b { font-weight: bold; }
+            .liveExample p { margin-top: 0.9em; margin-bottom: 0.9em;}
+            .liveExample p.advanced { height: 0; margin:0; opacity:0;  transition:  opacity 0.5s  linear,height 0.1s 0.5s, margin 0.1s 0.5s;}
+            .liveExample p.advanced.fadein {  height: 1em; margin-top: 0.9em; margin-bottom: 0.9em; opacity: 1;transition: height 0.1s linear, margin 0s linear, opacity 0.5s 0.1s linear;}
 
-.planet { background-color: #AAEECC; padding: 0.25em; border: 1px solid silver; margin-bottom: 0.5em; font-size: 0.75em;    
-          -webkit-transition: all 0.2s ease-out;
-    transition: all 0.2s ease-out;
-    -moz-transition:  all 0.2s ease-out; }
-.planet.rock { background-color: #EECCAA; }
-.liveExample input { margin: 0 0.3em 0 1em; }
+            .liveExample select[multiple] { width: 100%; height: 8em; }
+            .liveExample h2 { margin-top: 0.4em; }
 
-li { list-style-type: disc; margin-left: 20px; }
+            .planet { background-color: #AAEECC; padding: 0.25em; border: 1px solid silver; margin-bottom: 0.5em; font-size: 0.75em;    }
+            .planet.rock { background-color: #EECCAA; }
+            .liveExample input { margin: 0 0.3em 0 1em; }
 
-
-
+            li { list-style-type: disc; margin-left: 20px; }
 
         </style>
 
@@ -40,7 +37,7 @@ li { list-style-type: disc; margin-left: 20px; }
                 </label>
             </p>
 
-            <p data-bind='visible: displayAdvancedOptions'>
+            <p class="advanced" data-bind='css: {fadein: displayAdvancedOptions}'>
                 Show:
                 <label><input type='radio' name="type" value='all' data-bind='checked: typeToShow' />All</label>
                 <label><input type='radio' name="type" value='rock' data-bind='checked: typeToShow' />Rocky planets</label>
@@ -66,3 +63,4 @@ li { list-style-type: disc; margin-left: 20px; }
         </script>
     </body>
 </html>
+
