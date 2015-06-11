@@ -20,6 +20,10 @@ public final class Main {
         d.setPasswordValue("mypass");
         d.setBooleanValue(true);
         d.getOptionValues().addAll(Arrays.asList("Alpha", "Beta", "Gamma"));
+        d.getCountryOptionValues().addAll(Arrays.asList(
+            new Country("UK", 65000000),
+            new Country("USA", 320000000),
+            new Country("Sweden", 29000000)));
         d.setSelectedOptionValue("Gamma");
         d.getMultipleSelectedOptionValues().add("Alpha");
         d.setRadioSelectedOptionValue("Beta");
