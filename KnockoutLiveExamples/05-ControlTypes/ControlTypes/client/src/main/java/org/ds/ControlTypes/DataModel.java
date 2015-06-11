@@ -9,8 +9,17 @@ import net.java.html.json.Property;
     @Property(name = "booleanValue", type = boolean.class),
     @Property(name = "optionValues", type = String.class, array = true),
     @Property(name = "selectedOptionValue", type = String.class),
+    @Property(name = "countryOptionValues", type = Country.class, array = true),
+    @Property(name = "selectedCountryOptionValue", type = Country.class),
     @Property(name = "multipleSelectedOptionValues", type = String.class, array = true),
     @Property(name = "radioSelectedOptionValue", type = String.class)
 })
 final class DataModel {
+    
+    @Model(className = "Country", targetId = "", properties = {
+        @Property(name = "name", type = String.class),
+        @Property(name = "population", type = int.class)
+    })
+    public static final class CountryModel{
+    }
 }

@@ -62,6 +62,13 @@
                 <td><select data-bind="options: optionValues, value: selectedOptionValue"></select></td>
             </tr>
             <tr>
+                <td class="label">Drop-down list with objects:</td>
+                <td><select data-bind="options: countryOptionValues, optionsText:'name', value: selectedCountryOptionValue"></select></td>
+            </tr>
+            <tr><td class="label">Selected Country:</td>
+                    <td data-bind="text: selectedCountryOptionValue().name()"></td>
+            </tr>
+            <tr>
                 <td class="label">Multi-select drop-down list:</td>
                 <td><select multiple="multiple" data-bind="options: optionValues, selectedOptions: multipleSelectedOptionValues"></select></td>
             </tr>
